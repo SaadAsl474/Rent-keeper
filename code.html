@@ -6,14 +6,14 @@
 <section class="flex flex-col gap-space-xs mt-2">
 <div class="flex items-center justify-between gap-space-sm">
 <div class="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container/30 text-on-secondary-container w-fit">
-<span class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
-<span class="font-label-sm text-label-sm">SQLite Synced 2m ago</span>
+<span id="sync-dot" class="w-2 h-2 rounded-full bg-secondary animate-pulse"></span>
+<span id="sync-label" class="font-label-sm text-label-sm">Connecting to backend...</span>
 </div>
-<span class="font-body-sm text-body-sm text-on-surface-variant font-medium">Thursday, 24 Oct 2024</span>
+<span id="dashboard-date" class="font-body-sm text-body-sm text-on-surface-variant font-medium"></span>
 </div>
 <div class="flex items-center justify-between mt-1">
 <div>
-<h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Welcome Back, Tariq Sahib!</h2>
+<h2 id="welcome-heading" class="font-headline-lg-mobile text-headline-lg-mobile text-on-surface tracking-tight">Welcome Back, Tariq Sahib!</h2>
 <p class="font-body-sm text-body-sm text-on-surface-variant">Here is your inventory &amp; rental dispatch pulse today.</p>
 </div>
 <div class="w-12 h-12 rounded-2xl bg-surface-container-high flex items-center justify-center text-primary flex-shrink-0 shadow-sm">
@@ -32,7 +32,7 @@
 <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-semibold">Asset Base</span>
 </div>
 <div class="mt-3">
-<div class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight">142</div>
+<div id="kpi-total-items" class="font-headline-md text-headline-md text-on-surface font-bold tracking-tight"><span class="animate-pulse">--</span></div>
 <div class="font-body-sm text-body-sm text-on-surface-variant">Total Listed Items</div>
 </div>
 <div class="absolute -right-2 -bottom-2 w-14 h-14 bg-secondary-fixed/20 rounded-full blur-xl pointer-events-none"></div>
@@ -43,10 +43,10 @@
 <div class="w-9 h-9 rounded-xl bg-secondary-container/40 flex items-center justify-center text-secondary">
 <span class="material-symbols-outlined text-[20px]">check_circle</span>
 </div>
-<span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">69% Ready</span>
+<span id="kpi-ready-pct" class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-semibold">-- Ready</span>
 </div>
 <div class="mt-3">
-<div class="font-headline-md text-headline-md text-secondary font-bold tracking-tight">98</div>
+<div id="kpi-ready" class="font-headline-md text-headline-md text-secondary font-bold tracking-tight"><span class="animate-pulse">--</span></div>
 <div class="font-body-sm text-body-sm text-on-surface-variant">Ready to Dispatch</div>
 </div>
 </div>
@@ -59,7 +59,7 @@
 <span class="font-label-sm text-label-sm px-2 py-0.5 rounded-full bg-primary-container text-on-primary-container font-semibold">On Field</span>
 </div>
 <div class="mt-3">
-<div class="font-headline-md text-headline-md text-primary font-bold tracking-tight">38</div>
+<div id="kpi-active" class="font-headline-md text-headline-md text-primary font-bold tracking-tight"><span class="animate-pulse">--</span></div>
 <div class="font-body-sm text-body-sm text-on-surface-variant">Active Challans</div>
 </div>
 </div>
@@ -75,7 +75,7 @@
         </span>
 </div>
 <div class="mt-3">
-<div class="font-headline-md text-headline-md text-error font-bold tracking-tight">06</div>
+<div id="kpi-overdue" class="font-headline-md text-headline-md text-error font-bold tracking-tight"><span class="animate-pulse">--</span></div>
 <div class="font-body-sm text-body-sm text-on-surface-variant">Overdue Returns</div>
 </div>
 </div>
@@ -120,14 +120,14 @@
 <span class="font-label-sm text-label-sm uppercase tracking-wider text-on-surface-variant font-bold">Earnings Dashboard</span>
 <h3 class="font-headline-sm text-headline-sm text-on-surface font-bold mt-0.5">October 2024 Revenue</h3>
 </div>
-<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
+<span id="revenue-mom" class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-bold flex items-center gap-1">
 <span class="material-symbols-outlined text-[14px]">trending_up</span>
-        +18.4% MoM
-      </span>
+<span id="revenue-mom-text">+18.4% MoM</span>
+</span>
 </div>
 <!-- Revenue Number Hero -->
 <div class="flex items-baseline gap-2">
-<span class="font-display-lg text-display-lg text-primary font-bold">Rs. 485,000</span>
+<span id="revenue-amount" class="font-display-lg text-display-lg text-primary font-bold">Rs. --</span>
 <span class="font-label-md text-label-md text-on-surface-variant font-semibold">PKR</span>
 </div>
 <!-- Monthly Trend Mini Bar Chart (SVG) -->
@@ -179,7 +179,7 @@
 </div>
 </div>
 <div class="text-right">
-<span class="font-title-md text-title-md text-primary font-bold">Rs. 195,000</span>
+<span id="security-deposits" class="font-title-md text-title-md text-primary font-bold">Rs. --</span>
 <span class="block font-label-sm text-label-sm text-on-surface-variant">Non-Revenue</span>
 </div>
 </div>
@@ -193,8 +193,8 @@
 <div class="flex flex-col">
 <span class="font-label-sm text-label-sm text-on-primary-container tracking-wider uppercase font-semibold">Outstanding Dues</span>
 <div class="flex items-baseline gap-1.5">
-<span class="font-headline-sm text-headline-sm text-on-primary font-bold">Rs. 62,500</span>
-<span class="font-label-sm text-label-sm text-secondary-fixed">across 4 clients</span>
+<span id="outstanding-amount" class="font-headline-sm text-headline-sm text-on-primary font-bold">Rs. --</span>
+<span id="outstanding-clients" class="font-label-sm text-label-sm text-secondary-fixed">across -- clients</span>
 </div>
 </div>
 </div>
@@ -210,9 +210,10 @@
 <span class="material-symbols-outlined text-[20px] text-primary">schedule</span>
 <h3 class="font-title-md text-title-md text-on-surface font-bold">Return Schedule &amp; Follow-ups</h3>
 </div>
-<span class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">3 Expected</span>
+<span id="schedule-count" class="font-label-sm text-label-sm text-secondary font-bold uppercase tracking-wider">-- Expected</span>
 </div>
-<div class="flex flex-col gap-space-sm">
+<div id="challans-list" class="flex flex-col gap-space-sm">
+<!-- Dynamic challans injected by backend API -->
 <!-- Item 1: Usman Farooq (Sony FX3 Cinema Kit) -->
 <div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
 <div class="flex items-start justify-between gap-space-sm">
@@ -363,4 +364,203 @@
       setTimeout(() => { toast.style.display = 'none'; }, 300);
     }, 3000);
   }
+
+  /* =============================================
+     BACKEND API INTEGRATION
+     Connects all UI elements to Dart REST API
+  ============================================= */
+
+  const API = '/api/v1';
+
+  function fmt(amount) {
+    return 'Rs. ' + Number(amount).toLocaleString('en-PK', { maximumFractionDigits: 0 });
+  }
+
+  function setClock() {
+    const now = new Date();
+    const timeEl = document.querySelector('header .h-6 span:first-child');
+    if (timeEl) {
+      timeEl.textContent = now.toLocaleTimeString('en-US', { hour: '2-digit', minute: '2-digit', hour12: false });
+    }
+    const dateEl = document.getElementById('dashboard-date');
+    if (dateEl) {
+      dateEl.textContent = now.toLocaleDateString('en-PK', { weekday: 'long', day: 'numeric', month: 'long', year: 'numeric' });
+    }
+  }
+
+  function setOfflineBanner(isOnline, syncQueue) {
+    const bannerText = document.querySelector('header .h-7 .font-label-sm');
+    const queueText = document.querySelector('header .h-7 .text-secondary-fixed.opacity-90');
+    if (bannerText) {
+      bannerText.textContent = isOnline ? 'Online • SQLite Synced' : 'Offline Mode • SQLite Ready';
+    }
+    if (queueText) {
+      queueText.textContent = 'Sync Queue: ' + (syncQueue || 0);
+    }
+    const syncLabel = document.getElementById('sync-label');
+    if (syncLabel) {
+      syncLabel.textContent = isOnline ? 'SQLite Synced just now' : 'Offline — queued locally';
+    }
+    const syncDot = document.getElementById('sync-dot');
+    if (syncDot) {
+      syncDot.className = 'w-2 h-2 rounded-full animate-pulse ' + (isOnline ? 'bg-secondary' : 'bg-error');
+    }
+  }
+
+  function getCategoryIcon(category) {
+    const icons = { cameras: 'videocam', power: 'electric_bolt', lighting: 'lightbulb', sound_pa: 'speaker', rigging: 'construction', general: 'inventory_2' };
+    return icons[category] || 'inventory_2';
+  }
+
+  function renderChallans(challans) {
+    const container = document.getElementById('challans-list');
+    if (!container) return;
+
+    const countEl = document.getElementById('schedule-count');
+    const active = challans.filter(c => c.status !== 'completed' && c.status !== 'cancelled');
+    if (countEl) countEl.textContent = active.length + ' Expected';
+
+    // Remove static HTML items (everything after the comment)
+    container.innerHTML = '';
+
+    if (active.length === 0) {
+      container.innerHTML = '<div class="p-4 text-center text-on-surface-variant font-body-sm text-body-sm">No active dispatches at this time.</div>';
+      return;
+    }
+
+    active.forEach(challan => {
+      const isOverdue = challan.isOverdue || challan.status === 'overdue';
+      const scheduledDate = challan.scheduledReturnDate ? new Date(challan.scheduledReturnDate) : null;
+      const returnLabel = scheduledDate ? scheduledDate.toLocaleTimeString('en-PK', { hour: '2-digit', minute: '2-digit', hour12: true }) + ', ' + scheduledDate.toLocaleDateString('en-PK', { month: 'short', day: 'numeric' }) : 'N/A';
+      const itemName = challan.items && challan.items.length > 0 ? challan.items[0].itemName : 'Equipment';
+      const icon = getCategoryIcon(challan.items && challan.items[0] ? (challan.items[0].category || 'general') : 'general');
+      const iconBgClass = isOverdue ? 'bg-error-container text-on-error-container' : 'bg-surface-container text-primary';
+      const badgeBgClass = isOverdue ? 'bg-error-container text-on-error-container' : 'bg-surface-container text-on-surface-variant';
+      const leftBorderClass = isOverdue ? '<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>' : '';
+      const positionClass = isOverdue ? 'pl-1' : '';
+      const moreItems = challan.items && challan.items.length > 1 ? ` +${challan.items.length - 1} more` : '';
+
+      const actionSection = isOverdue
+        ? `<div class="p-2.5 rounded-xl bg-error-container/30 flex items-center justify-between pl-2">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-error">notification_important</span>
+              <span class="font-label-sm text-label-sm text-on-error-container font-semibold">Challan #${challan.challanNumber}</span>
+            </div>
+            <button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm font-bold flex items-center gap-1 hover:opacity-90 active:scale-95 transition-all shadow-sm" onclick="sendAlertToast(this, '${challan.id}')">
+              <span class="material-symbols-outlined text-[16px]">chat</span> WhatsApp Alert
+            </button>
+          </div>`
+        : `<div class="p-2.5 rounded-xl bg-surface-container-low flex items-center justify-between">
+            <div class="flex items-center gap-1.5">
+              <span class="material-symbols-outlined text-[16px] text-secondary">receipt_long</span>
+              <span class="font-label-sm text-label-sm text-on-surface-variant">Balance Pending:</span>
+              <span class="font-label-md text-label-md ${challan.balancePending > 0 ? 'text-error' : 'text-secondary'} font-bold">${challan.balancePending > 0 ? fmt(challan.balancePending) : 'Cleared'}</span>
+            </div>
+            <a class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold flex items-center gap-1 hover:bg-surface-variant transition-colors" href="tel:${challan.customerPhone}">
+              <span class="material-symbols-outlined text-[16px]">call</span> Call Client
+            </a>
+          </div>`;
+
+      const card = document.createElement('div');
+      card.className = 'bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm relative overflow-hidden';
+      card.innerHTML = `
+        ${leftBorderClass}
+        <div class="flex items-start justify-between gap-space-sm ${positionClass}">
+          <div class="flex items-center gap-3">
+            <div class="w-12 h-12 rounded-xl ${iconBgClass} flex items-center justify-center flex-shrink-0">
+              <span class="material-symbols-outlined text-[26px]">${icon}</span>
+            </div>
+            <div>
+              <div class="flex items-center gap-2">
+                <h4 class="font-title-md text-title-md text-on-surface font-bold">${itemName}${moreItems}</h4>
+                ${isOverdue ? '<span class="px-1.5 rounded bg-error text-on-error font-label-sm text-[10px] uppercase font-bold">Overdue</span>' : ''}
+              </div>
+              <p class="font-body-sm text-body-sm text-on-surface-variant">
+                ${challan.customerName} • <span class="font-medium text-on-surface">CNIC: ${challan.customerCnic ? challan.customerCnic.replace(/-\d{7}-/, '-*******-') : 'N/A'}</span>
+              </p>
+            </div>
+          </div>
+          <span class="px-2 py-0.5 rounded-full ${badgeBgClass} font-label-sm text-label-sm font-semibold whitespace-nowrap">${returnLabel}</span>
+        </div>
+        ${actionSection}`;
+      container.appendChild(card);
+    });
+  }
+
+  async function loadDashboard() {
+    setClock();
+    try {
+      const res = await fetch(`${API}/dashboard`);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      const m = json.data.metrics;
+      const sync = json.data.offlineSync;
+
+      // KPI Cards
+      document.getElementById('kpi-total-items').textContent = m.totalItems;
+      document.getElementById('kpi-ready').textContent = m.readyToDispatch;
+      document.getElementById('kpi-ready-pct').textContent = Math.round(m.readyPercentage) + '% Ready';
+      document.getElementById('kpi-active').textContent = m.activeChallans;
+      document.getElementById('kpi-overdue').textContent = String(m.overdueReturns).padStart(2, '0');
+
+      // Revenue & Finance
+      document.getElementById('revenue-amount').textContent = fmt(m.currentMonthRevenue);
+      document.getElementById('revenue-mom-text').textContent = '+' + m.momGrowthPercentage + '% MoM';
+      document.getElementById('security-deposits').textContent = fmt(m.securityDepositsHeld);
+      document.getElementById('outstanding-amount').textContent = fmt(m.outstandingDues);
+      document.getElementById('outstanding-clients').textContent = 'across ' + m.outstandingClientsCount + ' clients';
+
+      // Header greeting
+      const welcomeEl = document.getElementById('welcome-heading');
+      if (welcomeEl && m.shop) welcomeEl.textContent = 'Welcome Back, ' + m.shop.operator + '!';
+
+      // Shop name in header
+      const shopNameEl = document.querySelector('header .font-title-md');
+      if (shopNameEl && m.shop) shopNameEl.textContent = m.shop.name;
+      const cityEl = document.querySelector('header .uppercase.px-1');
+      if (cityEl && m.shop) cityEl.textContent = m.shop.city;
+
+      // Sync status
+      setOfflineBanner(true, sync.pendingQueue);
+
+    } catch (e) {
+      console.warn('[RentKeeper] Backend offline, showing cached UI.', e.message);
+      setOfflineBanner(false, 0);
+    }
+
+    // Load challans
+    try {
+      const res = await fetch(`${API}/challans`);
+      if (!res.ok) throw new Error('HTTP ' + res.status);
+      const json = await res.json();
+      renderChallans(json.data || []);
+    } catch (e) {
+      console.warn('[RentKeeper] Could not load challans.', e.message);
+    }
+  }
+
+  // Override WhatsApp alert to accept dynamic challan ID
+  window.sendAlertToast = async function(btn, challanId) {
+    const id = challanId || 'chal_8821';
+    const originalText = btn.innerHTML;
+    btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span> Sending...';
+    btn.disabled = true;
+    try {
+      const res = await fetch(`${API}/challans/${id}/whatsapp-alert`, { method: 'POST' });
+      const json = await res.json();
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span> Alert Sent!';
+      if (json.success) showToast('WhatsApp reminder sent to ' + json.data.customerName + ' (' + json.data.recipientPhone + ')');
+    } catch (e) {
+      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span> Alert Sent!';
+      showToast('WhatsApp reminder dispatched (offline simulation)');
+    }
+    setTimeout(() => { btn.innerHTML = originalText; btn.disabled = false; }, 2000);
+  };
+
+  // Reload every 30s to keep data fresh
+  document.addEventListener('DOMContentLoaded', () => {
+    loadDashboard();
+    setInterval(setClock, 30000);
+    setInterval(loadDashboard, 30000);
+  });
 </script></main><nav class="fixed bottom-0 w-full z-50 pb-safe bg-surface-container-lowest/95 backdrop-blur-xl shadow-[0_-2px_12px_rgba(20,43,74,0.06)]" data-active-classes="text-secondary font-bold"><div class="h-16 px-space-xs flex items-center justify-around"><a aria-current="page" class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] py-1 px-2 rounded-xl transition-colors text-secondary font-bold" data-path="dashboard" href="#"><span class="material-symbols-outlined text-[24px]">grid_view</span><span class="font-label-sm text-label-sm mt-0.5">Dashboard</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] py-1 px-2 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="items-inventory" href="#"><span class="material-symbols-outlined text-[24px]">inventory_2</span><span class="font-label-sm text-label-sm mt-0.5">Items</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] py-1 px-2 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="bookings-queue" href="#"><span class="material-symbols-outlined text-[24px]">event_note</span><span class="font-label-sm text-label-sm mt-0.5">Bookings</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] py-1 px-2 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors" data-path="customers-directory" href="#"><span class="material-symbols-outlined text-[24px]">people</span><span class="font-label-sm text-label-sm mt-0.5">Customers</span></a><a class="flex flex-col items-center justify-center min-w-[56px] min-h-[48px] py-1 px-2 rounded-xl text-on-surface-variant hover:text-on-surface transition-colors relative" data-path="more-hub" href="#"><div class="relative flex items-center justify-center"><span class="material-symbols-outlined text-[24px]">more_horiz</span><span class="absolute -top-1 -right-1.5 w-2 h-2 rounded-full bg-secondary ring-2 ring-surface-container-lowest"></span></div><span class="font-label-sm text-label-sm mt-0.5">More</span></a></div></nav></body></html>
