@@ -1,0 +1,22 @@
+# Dart / Flutter
+.dart_tool/
+.packages
+build/
+.pub-cache/
+.pub/
+*.iml
+
+# Backend runtime data (regenerates on first run via seed data)
+rentkeeper_backend/data/
+flutter_data_layer/data/
+
+# Test scratch
+rentkeeper_backend/test/data/
+
+# Editor
+.idea/
+.vscode/
+*.swp
+*.swo
+Thumbs.db
+.DS_Store
