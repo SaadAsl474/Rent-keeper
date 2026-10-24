@@ -1,22 +1,59 @@
-# Dart / Flutter
+# ==============================================================
+# Flutter / Dart
+# ==============================================================
 .dart_tool/
 .packages
-build/
 .pub-cache/
 .pub/
+build/
 *.iml
+.flutter-plugins
+.flutter-plugins-dependencies
 
+# ==============================================================
+# Android
+# ==============================================================
+# Local machine-specific properties (NEVER commit)
+rentkeeper_app/android/local.properties
+
+# Signing secrets (NEVER commit)
+rentkeeper_app/android/key.properties
+rentkeeper_app/android/**/*.keystore
+rentkeeper_app/android/**/*.jks
+
+# Gradle build caches
+rentkeeper_app/android/.gradle/
+rentkeeper_app/android/app/build/
+
+# ==============================================================
 # Backend runtime data (regenerates on first run via seed data)
+# ==============================================================
 rentkeeper_backend/data/
 flutter_data_layer/data/
 
 # Test scratch
 rentkeeper_backend/test/data/
 
-# Editor
+# ==============================================================
+# Secrets & Environment
+# ==============================================================
+.env
+.env.*
+*.env
+secrets.dart
+**/secrets/
+
+# ==============================================================
+# Editor / IDE
+# ==============================================================
 .idea/
 .vscode/
 *.swp
 *.swo
+
+# ==============================================================
+# OS Junk
+# ==============================================================
 Thumbs.db
 .DS_Store
+desktop.ini

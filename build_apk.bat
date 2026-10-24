@@ -8,7 +8,8 @@ echo.
 :: 1. Set environment paths
 set "JAVA_HOME=C:\Program Files\Android\Android Studio\jbr"
 set "ANDROID_HOME=C:\Users\MCS\AppData\Local\Android\Sdk"
-set "PATH=D:\Applications\flutter\bin;%JAVA_HOME%\bin;%PATH%"
+set "ANDROID_SDK_ROOT=C:\Users\MCS\AppData\Local\Android\Sdk"
+set "PATH=D:\Applications\flutter\bin;%JAVA_HOME%\bin;C:\Users\MCS\AppData\Local\Android\Sdk\platform-tools;C:\Users\MCS\AppData\Local\Android\Sdk\cmdline-tools\latest\bin;%PATH%"
 
 echo [1/3] Environment configured:
 echo   • Flutter SDK:    D:\Applications\flutter
