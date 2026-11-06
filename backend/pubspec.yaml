@@ -1,0 +1,10 @@
+name: rentkeeper_backend
+description: RentKeeper backend REST API server for rental business management.
+publish_to: 'none'
+version: 1.0.0
+
+environment:
+  sdk: ^3.13.4
+
+dependencies:
+  # No external dependencies — uses dart:io HttpServer and dart:convert only

@@ -109,39 +109,39 @@ class DatabaseService {
 
   // --- DASHBOARD METRICS ---
   DashboardMetrics getDashboardMetrics() {
-    final seedMetrics = SeedData.getDashboardMetrics();
+    // Dynamically calculate live status from active records
+    final totalItemsCount = _items.length;
+    final readyCount = _items.values.where((i) => i.status == 'available').length;
+    final readyPct = totalItemsCount > 0 ? (readyCount / totalItemsCount * 100) : 0.0;
 
-    // Dynamically calculate live status
     final activeChallans = _challans.values.where((c) => c.status == 'dispatched' || c.status == 'overdue').length;
     final overdueChallans = _challans.values.where((c) => c.isOverdue || c.status == 'overdue').length;
 
     double liveDepositsHeld = 0.0;
     double liveOutstanding = 0.0;
+    double liveRevenue = 0.0;
     for (var challan in _challans.values) {
+      liveRevenue += challan.paidAmount;
       if (challan.status != 'completed') {
         liveDepositsHeld += challan.securityDepositHeld;
         liveOutstanding += challan.balancePending;
       }
     }
 
-    final totalItemsCount = _items.length < seedMetrics.totalItems ? seedMetrics.totalItems : _items.length;
-    final readyCount = _items.values.where((i) => i.status == 'available').length;
-    final displayReady = readyCount > 0 ? (readyCount >= 8 ? seedMetrics.readyToDispatch : readyCount) : seedMetrics.readyToDispatch;
-
     return DashboardMetrics(
       totalItems: totalItemsCount,
-      readyToDispatch: displayReady,
-      activeChallans: activeChallans > 0 ? activeChallans : seedMetrics.activeChallans,
-      overdueReturns: overdueChallans > 0 ? overdueChallans : seedMetrics.overdueReturns,
-      readyPercentage: seedMetrics.readyPercentage,
-      currentMonthRevenue: seedMetrics.currentMonthRevenue,
-      momGrowthPercentage: seedMetrics.momGrowthPercentage,
-      securityDepositsHeld: liveDepositsHeld > 0 ? liveDepositsHeld : seedMetrics.securityDepositsHeld,
-      outstandingDues: liveOutstanding > 0 ? liveOutstanding : seedMetrics.outstandingDues,
+      readyToDispatch: readyCount,
+      activeChallans: activeChallans,
+      overdueReturns: overdueChallans,
+      readyPercentage: readyPct,
+      currentMonthRevenue: liveRevenue,
+      momGrowthPercentage: 0.0,
+      securityDepositsHeld: liveDepositsHeld,
+      outstandingDues: liveOutstanding,
       outstandingClientsCount: _customers.values.where((c) => c.outstandingBalance > 0).length,
-      revenueTrend: seedMetrics.revenueTrend,
+      revenueTrend: [],
       syncQueueCount: _shop['syncQueueCount'] as int? ?? 0,
-      lastSyncTime: '2m ago',
+      lastSyncTime: 'Just now',
       shopName: _shop['name']?.toString() ?? 'Al-Rehman Rentals',
       shopCity: _shop['city']?.toString() ?? 'Lahore',
       operatorName: _shop['operator']?.toString() ?? 'Tariq Sahib',

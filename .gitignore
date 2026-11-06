@@ -57,3 +57,8 @@ secrets.dart
 Thumbs.db
 .DS_Store
 desktop.ini
+
+# Built APK (too large for git, build locally with build_apk.bat)
+RentKeeper.apk
+*.apk
+backend/data/

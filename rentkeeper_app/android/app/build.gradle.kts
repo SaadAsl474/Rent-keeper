@@ -47,15 +47,6 @@ android {
         }
     }
 
-    // Split APK per ABI — dramatically reduces per-device APK size
-    splits {
-        abi {
-            isEnable = true
-            reset()
-            include("arm64-v8a", "armeabi-v7a", "x86_64")
-            isUniversalApk = false
-        }
-    }
 }
 
 kotlin {

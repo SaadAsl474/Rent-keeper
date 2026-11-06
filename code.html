@@ -214,96 +214,9 @@
 </div>
 <div id="challans-list" class="flex flex-col gap-space-sm">
 <!-- Dynamic challans injected by backend API -->
-<!-- Item 1: Usman Farooq (Sony FX3 Cinema Kit) -->
-<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex items-center gap-3">
-<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
-<span class="material-symbols-outlined text-[26px]">videocam</span>
-</div>
-<div>
-<h4 class="font-title-md text-title-md text-on-surface font-bold">Sony FX3 Cinema Kit + 24-70 GM</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
-<span>Usman Farooq</span>
-<span>•</span>
-<span class="font-medium text-on-surface">CNIC: 35201-8932***</span>
-</p>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-full bg-surface-container text-on-surface-variant font-label-sm text-label-sm font-semibold whitespace-nowrap">
-            Today, 5:00 PM
-          </span>
-</div>
-<div class="p-2.5 rounded-xl bg-surface-container-low flex items-center justify-between">
-<div class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[16px] text-tertiary-container">receipt_long</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Balance Pending:</span>
-<span class="font-label-md text-label-md text-error font-bold">Rs. 15,000</span>
-</div>
-<a class="px-3 py-1.5 rounded-lg bg-surface-container-highest text-primary font-label-sm text-label-sm font-bold flex items-center gap-1 hover:bg-surface-variant transition-colors" href="tel:+923001234567">
-<span class="material-symbols-outlined text-[16px]">call</span>
-            Call Client
-          </a>
-</div>
-</div>
-<!-- Item 3: Wedding Stage Lighting Truss (OVERDUE ALERT) -->
-<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm relative overflow-hidden">
-<div class="absolute left-0 top-0 bottom-0 w-1.5 bg-error"></div>
-<div class="flex items-start justify-between gap-space-sm pl-1">
-<div class="flex items-center gap-3">
-<div class="w-12 h-12 rounded-xl bg-error-container text-on-error-container flex items-center justify-center flex-shrink-0">
-<span class="material-symbols-outlined text-[26px]">lightbulb</span>
-</div>
-<div>
-<div class="flex items-center gap-2">
-<h4 class="font-title-md text-title-md text-on-surface font-bold">Stage Lighting Truss Rig</h4>
-<span class="px-1.5 py-0.2 rounded bg-error text-on-error font-label-sm text-[10px] uppercase font-bold">Overdue</span>
-</div>
-<p class="font-body-sm text-body-sm text-on-surface-variant">Royal Banquet Hall, Gulberg III</p>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-full bg-error-container text-on-error-container font-label-sm text-label-sm font-bold whitespace-nowrap">
-            2 hrs Late
-          </span>
-</div>
-<div class="p-2.5 rounded-xl bg-error-container/30 flex items-center justify-between pl-2">
-<div class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[16px] text-error">notification_important</span>
-<span class="font-label-sm text-label-sm text-on-error-container font-semibold">Challan #RK-8821</span>
-</div>
-<button class="px-3 py-1.5 rounded-lg bg-secondary text-on-secondary font-label-sm text-label-sm font-bold flex items-center gap-1 hover:opacity-90 active:scale-95 transition-all shadow-sm" onclick="sendAlertToast(this)">
-<span class="material-symbols-outlined text-[16px]">chat</span>
-            WhatsApp Alert
-          </button>
-</div>
-</div>
-<!-- Item 2: Bilal Ahmed (10kVA Soundproof Generator) -->
-<div class="bg-surface-container-lowest p-space-md rounded-2xl shadow-sm flex flex-col gap-space-sm">
-<div class="flex items-start justify-between gap-space-sm">
-<div class="flex items-center gap-3">
-<div class="w-12 h-12 rounded-xl bg-surface-container flex items-center justify-center text-primary flex-shrink-0">
-<span class="material-symbols-outlined text-[26px]">electric_bolt</span>
-</div>
-<div>
-<h4 class="font-title-md text-title-md text-on-surface font-bold">10kVA Soundproof Generator</h4>
-<p class="font-body-sm text-body-sm text-on-surface-variant flex items-center gap-1">
-<span>Bilal Ahmed</span>
-<span>•</span>
-<span class="font-medium text-on-surface">DHA Phase 6</span>
-</p>
-</div>
-</div>
-<span class="px-2 py-0.5 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm font-semibold whitespace-nowrap">
-            Tomorrow, 11 AM
-          </span>
-</div>
-<div class="p-2.5 rounded-xl bg-surface-container-low flex items-center justify-between">
-<div class="flex items-center gap-1.5">
-<span class="material-symbols-outlined text-[16px] text-secondary">verified</span>
-<span class="font-label-sm text-label-sm text-on-surface-variant">Deposit Cleared (Rs. 30,000 Held)</span>
-</div>
-<span class="font-label-sm text-label-sm text-secondary font-bold">On Schedule</span>
-</div>
+<div class="p-6 rounded-2xl bg-surface-container-lowest text-center text-on-surface-variant text-body-sm shadow-sm flex items-center justify-center gap-2">
+  <span class="material-symbols-outlined text-[18px] animate-spin text-secondary">sync</span>
+  <span>Loading real-time challans...</span>
 </div>
 </div>
 </section>
@@ -324,30 +237,6 @@
 </section>
 </div>
 <script>
-  async function sendAlertToast(btn) {
-    const originalText = btn.innerHTML;
-    btn.innerHTML = '<span class="material-symbols-outlined text-[16px] animate-spin">sync</span> Sending...';
-    btn.disabled = true;
-    try {
-      const res = await fetch('/api/v1/challans/chal_8821/whatsapp-alert', { method: 'POST' });
-      const json = await res.json();
-      if (json.success) {
-        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span> Alert Sent!';
-        showToast('WhatsApp reminder sent to ' + json.data.customerName + ' (' + json.data.recipientPhone + ')');
-      } else {
-        btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span> Alert Sent!';
-      }
-    } catch (e) {
-      // Local fallback simulation if server is offline
-      btn.innerHTML = '<span class="material-symbols-outlined text-[16px]">done</span> Alert Sent!';
-      showToast('WhatsApp reminder dispatched (Offline simulation)');
-    }
-    setTimeout(() => {
-      btn.innerHTML = originalText;
-      btn.disabled = false;
-    }, 2000);
-  }
-
   function showToast(msg) {
     let toast = document.getElementById('rk-toast');
     if (!toast) {
@@ -370,7 +259,9 @@
      Connects all UI elements to Dart REST API
   ============================================= */
 
-  const API = '/api/v1';
+  const API = (window.location.protocol === 'file:' || (window.location.hostname !== 'localhost' && window.location.port !== '8080'))
+    ? 'http://localhost:8080/api/v1'
+    : '/api/v1';
 
   function fmt(amount) {
     return 'Rs. ' + Number(amount).toLocaleString('en-PK', { maximumFractionDigits: 0 });
@@ -524,8 +415,18 @@
       setOfflineBanner(true, sync.pendingQueue);
 
     } catch (e) {
-      console.warn('[RentKeeper] Backend offline, showing cached UI.', e.message);
+      console.warn('[RentKeeper] Backend offline.', e.message);
       setOfflineBanner(false, 0);
+      document.getElementById('kpi-total-items').textContent = '0';
+      document.getElementById('kpi-ready').textContent = '0';
+      document.getElementById('kpi-ready-pct').textContent = '0% Ready';
+      document.getElementById('kpi-active').textContent = '0';
+      document.getElementById('kpi-overdue').textContent = '00';
+      document.getElementById('revenue-amount').textContent = 'Rs. 0';
+      document.getElementById('revenue-mom-text').textContent = '+0% MoM';
+      document.getElementById('security-deposits').textContent = 'Rs. 0';
+      document.getElementById('outstanding-amount').textContent = 'Rs. 0';
+      document.getElementById('outstanding-clients').textContent = 'across 0 clients';
     }
 
     // Load challans
@@ -536,6 +437,10 @@
       renderChallans(json.data || []);
     } catch (e) {
       console.warn('[RentKeeper] Could not load challans.', e.message);
+      const container = document.getElementById('challans-list');
+      if (container) {
+        container.innerHTML = '<div class="p-5 text-center text-on-surface-variant text-body-sm rounded-2xl bg-surface-container-lowest shadow-sm flex flex-col items-center gap-2"><span class="material-symbols-outlined text-[24px] text-error">cloud_off</span><span>Backend server offline. Launch server to sync live challans.</span><code class="text-xs px-2 py-1 bg-surface-container rounded font-mono">dart run bin/server.dart --port=8080</code></div>';
+      }
     }
   }
 
